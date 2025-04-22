@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Abel M S | Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;400&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #1e1e2f;
+      --main: #e6e6ea;
+      --accent: #a86fff;
+      --sidebar-bg: #292942;
+      --skill-bg: #3f3f5c;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: var(--bg);
+      color: var(--main);
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.light {
+      --bg: #f3f0ff;
+      --main: #3f3d56;
+      --accent: #6c63ff;
+      --sidebar-bg: #dcd6f7;
+      --skill-bg: #b8b3e9;
+    }
+
+    .resume {
+      display: flex;
+      max-width: 900px;
+      width: 100%;
+      background: #2a2a3c;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s;
+    }
+
+    .resume.light {
+      background: white;
+    }
+
+    .sidebar {
+      background: var(--sidebar-bg);
+      color: var(--main);
+      width: 30%;
+      min-width: 260px;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .sidebar img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+    }
+
+    .sidebar h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8em;
+      margin: 15px 0 5px;
+    }
+
+    .sidebar h2 {
+      font-size: 1em;
+      font-weight: 400;
+      margin: 0 0 20px;
+      opacity: 0.7;
+    }
+
+    .contact p {
+      font-size: 0.9em;
+      margin: 8px 0;
+    }
+
+    .contact a {
+      color: var(--main);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .skills {
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    .skills h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1em;
+      margin-bottom: 10px;
+    }
+
+    .skills span {
+      display: inline-block;
+      background: var(--skill-bg);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.8em;
+      margin: 4px 4px 0 0;
+    }
+
+    .social-icons {
+      margin-top: 25px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 8px;
+    }
+
+    .social-icons img {
+      width: 28px;
+      height: 28px;
+      vertical-align: middle;
+      filter: brightness(90%);
+    }
+
+    .main {
+      padding: 30px 40px;
+      width: 70%;
+    }
+
+    .main h3 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--accent);
+      font-size: 1.2em;
+      margin-bottom: 8px;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .main h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .main section {
+      margin-bottom: 25px;
+    }
+
+    .main p,
+    .main ul {
+      font-size: 0.95em;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .main ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .main ul li {
+      margin-bottom: 12px;
+    }
+
+    .bar {
+      background: #444;
+      border-radius: 4px;
+      overflow: hidden;
+      height: 8px;
+      margin: 6px 0 12px;
+    }
+
+    .bar-inner {
+      height: 100%;
+      background: var(--accent);
+    }
+
+    .toggle-theme {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+    }
+
+    @media (max-width: 800px) {
+      .resume {
+        flex-direction: column;
+      }
+
+      .sidebar,
+      .main {
+        width: 100%;
+      }
+
+      .sidebar {
+        padding: 20px;
+      }
+
+      .main {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="toggle-theme" onclick="toggleTheme()">🌗</button>
+
+  <div class="resume">
+    <aside class="sidebar">
+      <img src="photo.jpg" alt="Abel M S" />
+      <h1>Abel M S</h1>
+      <h2>Computer Science Student</h2>
+
+      <div class="contact">
+        <p><a href="mailto:abelms2006@gmail.com">abelms2006@gmail.com</a></p>
+        <p>📱 9496714910</p>
+      </div>
+
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/abelms2006" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/hsalfesreveR" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" />
+        </a>
+      </div>
+
+      <div class="skills">
+        <h3>Skills</h3>
+        <span>Python</span><span>C</span><span>HTML</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section>
+        <h3>About Me</h3>
+        <p>I’m a passionate Computer Science student at Vimal Jyothi Engineering College. I enjoy solving problems, building real-world projects, and learning cutting-edge technologies.</p>
+      </section>
+
+      <section>
+        <h3>Education</h3>
+        <ul>
+          <li><strong>Vimal Jyothi Engineering College</strong>, Chemperi, Kannur<br />
+            B.Tech in Computer Science &amp; Engineering (Expected 2028)
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Projects</h3>
+        <ul>
+          <li>No projects yet — check back soon!</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Technical Proficiency</h3>
+        <p>Python</p>
+        <div class="bar"><div class="bar-inner" style="width:90%"></div></div>
+        <p>C</p>
+        <div class="bar"><div class="bar-inner" style="width:75%"></div></div>
+        <p>HTML</p>
+        <div class="bar"><div class="bar-inner" style="width:85%"></div></div>
+      </section>
+    </main>
+  </div>
+
+  <a href="https://wa.me/919496714910" class="contact-button" target="_blank">📞</a>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+      document.querySelector('.resume').classList.toggle('light');
+    }
+  </script>
+</body>
+</html>
